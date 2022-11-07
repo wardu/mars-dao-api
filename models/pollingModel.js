@@ -1,6 +1,6 @@
 const fs = require("fs");
 const crypto = require("crypto");
-const helpers = require("../../utils/helpers");
+const helpers = require("../utils/helpers");
 
 module.exports = {
   getAllPolls: () => {
