@@ -1,7 +1,21 @@
 const router = require("express").Router();
 
-const controller = require("../controllers/pollingController");
+const {
+  getAllPolls,
+  addPoll,
+  getSinglePoll,
+  editPollDetails,
+  deletePoll,
+} = require("../controllers/pollingController");
 
-router.get("/", controller.getAllPolls);
+router.get("/", getAllPolls);
+
+router.get("/:id", getSinglePoll);
+
+router.put("/id", editPollDetails);
+
+router.delete("/:id", deletePoll);
+
+router.post("/", addPoll);
 
 module.exports = router;
