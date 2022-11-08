@@ -4,6 +4,10 @@ const getPolls = () => {
   const fileContent = fs.readFileSync("./data/polling.json");
   return JSON.parse(fileContent);
 };
+const getCommentss = () => {
+  const fileContent = fs.readFileSync("./data/comments.json");
+  return JSON.parse(fileContent);
+};
 
 const getSelectedPoll = (id) => {
   const polls = getPolls();

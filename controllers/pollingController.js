@@ -21,4 +21,8 @@ module.exports = {
     const polls = pollingModel.addPoll(req.body);
     res.status(201).json(polls);
   },
+  addComment: (req, res) => {
+    const comments = pollingModel.addComment(req.body);
+    res.status(201).json(comments);
+  },
 };

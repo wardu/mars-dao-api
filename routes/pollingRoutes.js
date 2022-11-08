@@ -6,6 +6,7 @@ const {
   getSinglePoll,
   editPollDetails,
   deletePoll,
+  addComment,
 } = require("../controllers/pollingController");
 
 router.get("/", getAllPolls);
@@ -17,5 +18,7 @@ router.put("/id", editPollDetails);
 router.delete("/:id", deletePoll);
 
 router.post("/", addPoll);
+
+router.post("/:id/comments", addComment);
 
 module.exports = router;

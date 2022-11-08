@@ -56,4 +56,27 @@ module.exports = {
     fs.writeFileSync("./data/polling.json", JSON.stringify(polls));
     return polls;
   },
+
+  getSinglePoll: (id) => {
+    const polls = helpers.getPolls();
+    const selected = helpers.getSelectedPoll(id);
+    return polls[selected];
+  },
+  addComment: (comment) => {
+    let comments = helpers.getComments();
+
+    const newComment = {
+      id: crypto.randomBytes(16).toString("hex"),
+      pollId: "Test ID",
+      timeStamp: new Date(),
+      user: "test",
+      comment: comment,
+      upVotes: 0,
+      downVotes: 0,
+    };
+    comments.push(newComment);
+
+    fs.writeFileSync("./data/comments.json", JSON.stringify(comments));
+    return comments;
+  },
 };
