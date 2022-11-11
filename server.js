@@ -4,7 +4,7 @@ const forumRoutes = require("./routes/forumRoutes.js");
 const pollingRoutes = require("./routes/pollingRoutes.js");
 
 require("dotenv").config();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 
 const app = express();
 app.use(express.json());
