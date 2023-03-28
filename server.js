@@ -23,3 +23,6 @@ app.use("/forum", forumRoutes);
 app.listen(PORT, () => {
   console.log(`👽👽👽  App listening on port: ${PORT}  👽👽👽`);
 });
+
+// Export the Express API for vercel
+module.exports = app;
